@@ -16,14 +16,14 @@ const EventsRsvp = async () => {
   const events = await getEventsForDashboard(user.id)
 
   return (
-    <div className="w-full h-full p-4 flex justify-center">
+    <div className="h-full p-4 flex justify-center">
       <div className="w-full">
         <h2 className="text-center text-xl">{`Latest Events`}</h2>
         <div className="rounded-md border border-default-100 my-8">
           {events.map((event) => (
             <div
               key={event.id}
-              className="border-b border-default-100 p-2 flex gap-2"
+              className="border-b border-default-100 p-2 flex flex-wrap gap-2"
             >
               <Link href={`/dashboard/events/${event.id}`}>
                 <span>{event.name}</span>
